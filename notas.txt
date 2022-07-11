@@ -1,0 +1,3 @@
+Realizar el DER
+Utilizar MySQL
+Crear una API con Java Spring Boot
