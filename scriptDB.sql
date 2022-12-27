@@ -5,19 +5,19 @@ SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
 -- -----------------------------------------------------
--- Schema portfolio
+-- Schema bqdycsivbvj6bwpddid7
 -- -----------------------------------------------------
 
 -- -----------------------------------------------------
--- Schema portfolio
+-- Schema bqdycsivbvj6bwpddid7
 -- -----------------------------------------------------
-CREATE SCHEMA IF NOT EXISTS `portfolio` DEFAULT CHARACTER SET utf8 ;
-USE `portfolio` ;
+--CREATE SCHEMA IF NOT EXISTS `bqdycsivbvj6bwpddid7` DEFAULT CHARACTER SET utf8 ;
+USE `bqdycsivbvj6bwpddid7` ;
 
 -- -----------------------------------------------------
--- Table `portfolio`.`users`
+-- Table `bqdycsivbvj6bwpddid7`.`users`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `portfolio`.`users` (
+CREATE TABLE IF NOT EXISTS `bqdycsivbvj6bwpddid7`.`users` (
   `idusers` INT NOT NULL AUTO_INCREMENT,
   `email` VARCHAR(45) NOT NULL,
   `password` VARCHAR(45) CHARACTER SET 'utf8' NOT NULL,
@@ -27,9 +27,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `portfolio`.`person`
+-- Table `bqdycsivbvj6bwpddid7`.`person`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `portfolio`.`person` (
+CREATE TABLE IF NOT EXISTS `bqdycsivbvj6bwpddid7`.`person` (
   `idperson` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `backImage` VARCHAR(45) NULL,
@@ -42,9 +42,9 @@ ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `portfolio`.`experience`
+-- Table `bqdycsivbvj6bwpddid7`.`experience`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `portfolio`.`experience` (
+CREATE TABLE IF NOT EXISTS `bqdycsivbvj6bwpddid7`.`experience` (
   `idexperience` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `img` VARCHAR(45) NULL,
@@ -56,16 +56,16 @@ CREATE TABLE IF NOT EXISTS `portfolio`.`experience` (
   INDEX `fk_experience_person1_idx` (`person_idperson` ASC) VISIBLE,
   CONSTRAINT `fk_experience_person1`
     FOREIGN KEY (`person_idperson`)
-    REFERENCES `portfolio`.`person` (`idperson`)
+    REFERENCES `bqdycsivbvj6bwpddid7`.`person` (`idperson`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `portfolio`.`education`
+-- Table `bqdycsivbvj6bwpddid7`.`education`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `portfolio`.`education` (
+CREATE TABLE IF NOT EXISTS `bqdycsivbvj6bwpddid7`.`education` (
   `ideducation` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `img` VARCHAR(45) NULL,
@@ -77,16 +77,16 @@ CREATE TABLE IF NOT EXISTS `portfolio`.`education` (
   INDEX `fk_education_person_idx` (`person_idperson` ASC) VISIBLE,
   CONSTRAINT `fk_education_person`
     FOREIGN KEY (`person_idperson`)
-    REFERENCES `portfolio`.`person` (`idperson`)
+    REFERENCES `bqdycsivbvj6bwpddid7`.`person` (`idperson`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
 
 -- -----------------------------------------------------
--- Table `portfolio`.`abilities`
+-- Table `bqdycsivbvj6bwpddid7`.`abilities`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `portfolio`.`abilities` (
+CREATE TABLE IF NOT EXISTS `bqdycsivbvj6bwpddid7`.`abilities` (
   `idabilities` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `skill` VARCHAR(45) NULL,
@@ -96,7 +96,7 @@ CREATE TABLE IF NOT EXISTS `portfolio`.`abilities` (
   INDEX `fk_abilities_person1_idx` (`person_idperson` ASC) VISIBLE,
   CONSTRAINT `fk_abilities_person1`
     FOREIGN KEY (`person_idperson`)
-    REFERENCES `portfolio`.`person` (`idperson`)
+    REFERENCES `bqdycsivbvj6bwpddid7`.`person` (`idperson`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB
@@ -104,9 +104,9 @@ COMMENT = '	';
 
 
 -- -----------------------------------------------------
--- Table `portfolio`.`projects`
+-- Table `bqdycsivbvj6bwpddid7`.`projects`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `portfolio`.`projects` (
+CREATE TABLE IF NOT EXISTS `bqdycsivbvj6bwpddid7`.`projects` (
   `idprojects` INT NOT NULL,
   `name` VARCHAR(45) NOT NULL,
   `date` VARCHAR(45) NULL,
@@ -118,7 +118,7 @@ CREATE TABLE IF NOT EXISTS `portfolio`.`projects` (
   INDEX `fk_projects_person1_idx` (`person_idperson` ASC) VISIBLE,
   CONSTRAINT `fk_projects_person1`
     FOREIGN KEY (`person_idperson`)
-    REFERENCES `portfolio`.`person` (`idperson`)
+    REFERENCES `bqdycsivbvj6bwpddid7`.`person` (`idperson`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
